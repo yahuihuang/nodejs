@@ -8,7 +8,7 @@
 var fs = require('fs');
 
 //0.設定值
-var error_hostname = '172.24.41.51';
+var error_hostname = 'XXX.XXX.XXXX.XXX'; //此為自行設定傳送資料之主機
 
 //1.傳入參數
 if (process.argv.length <= 3) {
@@ -33,11 +33,6 @@ console.log('昨日: ' + yesdayStr + ' => ' + yesdayFile);
 
 //3.主流程
 gen_today_file();
-//var sleep = require('system-sleep');
-//sleep(10*1000); // sleep for 10 seconds
-//sleep(10000);
-//var identical = compare_file();
-//send_error(identical);
 
 /*產生比對檔*/
 function gen_today_file() { 
@@ -150,7 +145,7 @@ function send_error(identical) {
         var options = {
             hostname: error_hostname,
             port: 80,
-            path: '/warrantweb/Analysis.action',
+            path: '/errorweb/error.action', //此為server需有對應程式接收錯誤訊息
             method: 'POST',
             headers:{
                 "Content-Length":postData.length,
@@ -176,8 +171,3 @@ function send_error(identical) {
         req.end();
     }
 }
-/*
-function sleep(milliSeconds) {
-    var startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + milliSeconds);
-}*/
