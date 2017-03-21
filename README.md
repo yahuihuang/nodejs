@@ -26,4 +26,4 @@ CREATE TABLE JBContact (<br/>
   2) 執行指令<br/>
   npm start<br/>
 <p/>  
-  3) 參考說明: https://myyhhuang.com/2017/03/20/nodejs-mvc%E6%A1%86%E6%9E%B6express%E4%BD%BF%E7%94%A8mysql%E7%AF%84%E4%BE%8B/<br/>
+  3) 參考說明: http://wp.me/p18o0t-vf<br/>
