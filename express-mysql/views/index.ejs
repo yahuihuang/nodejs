@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <script language="JavaScript">
+  <!--
+  function Edit(seqNo) {
+      window.location.href = "/userEdit?seqNo=" + seqNo;
+  }
+  
+  function Delete(seqNo) {
+      var rs = confirm('確定刪除?');
+      if (rs) {
+          window.location.href = "/userDelete?seqNo=" + seqNo;
+      }
+  }
+      
+  function Search() {
+      var userId = document.getElementsByName('userId')[0].value;
+      window.location.href = "/?userId=" + userId;;
+  }
+  //-->        
+  </script>
+  <body>
+    <h1>帳號清單</h1>
+    <div class="search">
+        <label>使用者代碼：</label>
+        <input type="text" name="userId" value="<%=userId %>" placeholder="請輸入使用者代碼">
+        <input type="button" name="sSearch" value="Search" onclick="Search();">
+    </div>
+    <input type='submit' value='新增' onclick="javascript: location.href='add'">
+    <table>
+        <tr>
+            <th>流水號</th>
+            <th>使用者代碼</th>
+            <th>聯絡類型</th>
+            <th>聯絡內容</th>
+            <th>備註</th>
+            <th>修改時間</th>
+            <th>修改人員</th>
+        </tr>
+        <% for ( var i = 0 ; i < data.length ; i++){ %>
+            <tr>
+                <td>
+                    <%= data[i].seqNo  %>
+                </td>
+                <td>
+                    <%= data[i].userId  %>
+                </td>
+                <td>
+                    <%= data[i].cKind  %>
+                </td>
+                <td>
+                    <%= data[i].contact  %>
+                </td>
+                <td>
+                    <%= data[i].remark  %>
+                </td>
+                <td>
+                    <%= data[i].ModifyTime  %>
+                </td>
+                <td>
+                    <%= data[i].ModifyEmp  %>
+                </td>
+                <td>
+                    <input type="button" name="修改" value="修改" onclick="Edit('<%= data[i].seqNo  %>');" />
+                </td>
+                <td>
+                    <input type="button" name="刪除" value="刪除" onclick="Delete('<%= data[i].seqNo  %>');" />
+                </td>
+            </tr>
+            <% } %>
+    </table>
+  </body>
+</html>

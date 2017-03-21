@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+</head>
+
+<body>
+    <form name="addform" action="userAdd" method="post" accept-charset="utf-8" >
+        <h1>帳號新增</h1>
+        <div>
+            <label>使用者代碼：</label>
+            <input type="text" name="userId" placeholder="使用者代碼" />
+        </div>
+        <div>
+            <label>聯絡類型：</label>
+            <input type="text" name="cKind" placeholder="聯絡類型" value="1" readonly>
+        </div>
+        <div>
+            <label>聯絡內容：</label>
+            <input type="text" name="contact" placeholder="聯絡內容">
+        </div>
+        <div>
+            <label>備註：</label>
+            <input type="text" name="remark" placeholder="備註">
+        </div>
+        <div>
+            <input type='submit' value='設定'>
+            <input type='reset' value='清除'>
+            <input type='button' value='回前頁' onclick="javascript: location.href='/'">
+        </div>
+    </form>
+</body>
+
+</html>

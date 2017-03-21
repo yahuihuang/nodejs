@@ -1,0 +1,26 @@
+<form name="editform" action="userEdit" method="post" accept-charset="utf-8">
+    <h1>帳號編輯</h1>
+    <input type="hidden" name="seqNo" value="<%=data[0].seqNo  %>" />
+    <div>
+        <label>使用者代碼：</label>
+        <input type="text" name="userId" placeholder="使用者代碼" value="<%=data[0].userId %>" readonly/>
+    </div>
+    <div>
+        <label>聯絡類型：</label>
+        <input type="text" name="cKind" placeholder="聯絡類型" value="<%=data[0].cKind %>" readonly />
+    </div>
+    <div>
+        <label>聯絡內容：</label>
+        <input type="text" name="contact" placeholder="聯絡內容" value="<%=data[0].contact %>">
+    </div>
+    <div>
+        <label>備註：</label>
+        <input type="text" name="remark" placeholder="備註" value="<%=data[0].remark %>">
+    </div>
+    <div>
+        <input type='submit' value='設定'>
+        <input type='reset' value='清除'>
+        <input type='button' value='回前頁' onclick="javascript: window.history.back();">
+    </div>
+</form>
+        
